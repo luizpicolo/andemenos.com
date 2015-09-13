@@ -41,42 +41,12 @@
  }
 
  // Mobile and tablets version
- @include media($mobile) {
-   //display: none;
+ @include media($all) {
    position: absolute;
    top: 68px;
    width: 220px !important;
    left: -270px;
    z-index: 1000;
-   height: 100%;
-
-   .nav-close {
-     display: block;
-   }
- }
-
- @include media($tablet) {
-   //display: none;
-   position: absolute;
-   top: 68px;
-   width: 220px !important;
-   left: -270px;
-   z-index: 998;
-   height: 100%;
-
-   .nav-close {
-     display: block;
-   }
- }
-
- @include media($small-desktop) {
-   //display: none;
-   position: absolute;
-   top: 68px;
-   width: 220px !important;
-   left: -270px;
-   z-index: 998;
-   height: 100%;
 
    .nav-close {
      display: block;
