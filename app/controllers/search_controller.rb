@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
   def index
     conditional = {}
-    conditional[:status] = true
+    # conditional[:status] = true
     conditional[:end_date_offer] = {
       gte: Time.zone.now.strftime("%Y-%m-%d").to_date
     }
