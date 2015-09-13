@@ -1,0 +1,119 @@
+body {
+  background: $color-4;
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $color-3;
+  text-decoration: none;
+}
+
+main {
+  @include outer-container;
+  padding-top: 5px;
+  min-height: 500px;
+}
+
+li, ul, h1, h2 {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.suggestions {
+  color: blue !important;
+}
+
+.center {
+  @include outer-container;
+}
+
+.display-none {
+  display: none;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.bg-overlay {
+  display: none;
+  background: transparent image_url("bg-overlay.png") repeat scroll 0% 0%;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 997;
+}
+
+.offers-suggestions {
+  margin: 10px 0;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.search-null-title {
+  text-transform: uppercase;
+}
+
+.msg-search-null {
+  position: relative;
+}
+
+.logo-aside-title {
+  margin: 10px 0;
+  font-size: 1em;
+}
+
+hr {
+  border-color: #EBEBEB;
+}
+
+.text-page {
+  background: #FFF;
+  padding: 30px;
+  div {
+    margin: 10px 0;
+    li {
+      display: block;
+    }
+  }
+
+  // Mobile and tablets version
+  @include media($mobile) {
+    @include span-columns(12);
+    padding: 0 20px;
+  }
+
+  @include media($tablet) {
+    @include span-columns(12);
+    padding: 0 20px;
+  }
+
+  @include media($small-desktop) {
+    @include span-columns(12);
+    padding: 0 20px;
+  }
+}
+
+.amount-product {
+  color: #000;
+  font-size: 13px;
+}

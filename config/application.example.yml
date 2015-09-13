@@ -1,0 +1,10 @@
+# Configuration all env mail
+ADDRESS:    'smtp.gmail.com'
+PORT:       '587'
+DOMAIN:     'gmail.com'
+USER_NAME:  ''
+PASSWORD:   ''
+
+# Carrierwave
+UPLOAD_HOST: 'http://cdn1.localtest.me:3000/'
+UPLOAD_DIR: '/Users/luizpicolo/ruby/andemenoscom/public/'

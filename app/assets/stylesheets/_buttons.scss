@@ -1,0 +1,53 @@
+// buttons
+
+.btn {
+  cursor: pointer;
+
+  position: relative;
+  box-sizing: border-box;
+
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+
+  color: $color-1;
+  font-size: 1em;
+  font-weight: normal;
+  text-decoration: none;
+
+  margin: 0;
+  padding: 0 6px;
+
+  border: 0;
+  border-bottom: solid 2px rgba($color-1, .1);
+  border-radius: 4px;
+  background: $color-4;
+
+  @include transition(.1s ease);
+
+  outline: none;
+  text-align: center;
+
+  i {
+    margin: 0 10px 0 -5px;
+  }
+}
+
+.btn-simple {
+  background: $color-8;
+  color: #FFF !important;
+
+  &:hover,
+  &:active {
+    background: $color-10;
+  }
+}
+
+.btn-facebook {
+  background: #3A5795;
+  color: #FFF !important;
+}
+
+.btn-full {
+  width: 100%;
+}

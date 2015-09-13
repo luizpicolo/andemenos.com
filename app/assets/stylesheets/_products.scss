@@ -1,0 +1,193 @@
+.list-products {
+  @include span-columns(9);
+
+  // Mobile and tablets version
+  @include media($mobile) {
+    @include span-columns(12);
+    //margin-top: 130px;
+  }
+
+  @include media($tablet) {
+    @include span-columns(12);
+    //margin-top: 108px;
+  }
+
+  @include media($small-desktop) {
+    @include span-columns(12);
+    //margin-top: 108px;
+  }
+}
+
+.cont-products {
+  padding: 0 15px;
+
+  // Mobile and tablets version
+  @include media($mobile) {
+    padding-top: 130px
+  }
+
+  @include media($tablet) {
+    padding-top: 130px
+  }
+
+  @include media($small-desktop) {
+    padding-top: 130px
+  }
+}
+
+.product {
+  background: $color-5;
+  margin: 15px 0 8px 0;
+  border-radius: 10px;
+  @include span-columns(4);
+
+  .logo-comp{
+    @include outer-container;
+    border-bottom: 3px solid $color-4;
+    padding-left: 10px;
+    height: 50px;
+
+    div {
+      @include span-columns(6);
+      padding: 10px 10px 0 0;
+
+      a {
+        color: $color-6;
+      }
+    }
+  }
+
+  .text-comp{
+    @include outer-container;
+    border-bottom: 3px solid $color-4;
+    padding-left: 10px;
+    height: 45px;
+
+    div {
+      @include span-columns(6);
+      padding: 7px 0 0 0;
+      font-size: 13px;
+    }
+
+    a {
+      color: $color-6;
+    }
+
+    .text-right {
+      padding: 10px 10px 0 0;
+    }
+  }
+
+  .image-product {
+    margin-top: 20px;
+    border-bottom: 3px solid $color-4;
+    text-align: center;
+    height: 130px;
+
+    // Mobile and tablets version
+    @include media($mobile) {
+      @include span-columns(4);
+      text-align: center;
+      border-bottom: none;
+      padding-left: 5px;
+      img {
+        height: 80%;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 1.1em;
+    width: 1%;
+    height: 50px;
+    margin: 0 20px;
+    line-height: 1;
+    border-bottom: 1px dashed $color-7;
+    padding: 5px;
+    display: table-cell;
+    vertical-align: middle;
+
+    // Mobile and tablets version
+    @include media($mobile) {
+      @include span-columns(8);
+      margin: 0 0 0 0;
+      height: 55px;
+      font-size: 0.8em;
+      padding: 25px 20px 0;
+      border-bottom: none;
+      text-align: right;
+    }
+  }
+
+  .price {
+    padding: 10px 0 0;
+    color: $color-8;
+
+    p:first-child {
+      position: relative;
+      left: -29px;
+      height: 20px;
+
+      @include media($mobile) {
+        left: -80px;
+      }
+    }
+
+    p:last-child {
+      font-size: 2em;
+      font-weight: bold;
+      position: relative;
+      top: -10px;
+
+      @include media($mobile) {
+        left: -20px;
+      }
+
+      span {
+        font-size: 10px;
+        margin-left: 2px;
+      }
+    }
+
+    // Mobile and tablets version
+    @include media($mobile) {
+      @include span-columns(8);
+      padding: 0;
+      margin: 0;
+      text-align: right;
+    }
+  }
+
+  .social {
+    width: 100%;
+    position: relative;
+    top: -12px;
+    i, a { color: $color-6 }
+    div {
+      font-size: 10px;
+      margin-top: 5px;
+    }
+
+    @include media($mobile) {
+      @include span-columns(12);
+    }
+  }
+
+  // Mobile and tablets version
+  @include media($mobile) {
+    @include span-columns(12);
+  }
+
+  @include media($tablet) {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+
+  @include media($small-desktop) {
+    @include omega(3n);
+  }
+
+  @include media($desktop) {
+    @include omega(3n);
+  }
+}

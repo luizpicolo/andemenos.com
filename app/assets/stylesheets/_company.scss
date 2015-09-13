@@ -1,0 +1,41 @@
+.company-info {
+  background: $color-5;
+  display: block;
+  margin-left: 25.35765%;
+  width: 74.4106%;
+  padding: 13px 0;
+  text-align: center;
+  position: relative;
+  top: 3.5px;
+
+  div {
+    display: block;
+  }
+
+  // Mobile and tablets version
+  @include media($mobile) {
+    @include span-columns(12);
+    margin-left: 0;
+  }
+
+  @include media($tablet) {
+    @include span-columns(12);
+    margin-left: 0;
+  }
+
+  @include media($small-desktop) {
+    @include span-columns(12);
+    margin-left: 0;
+  }
+}
+
+.logo-aside {
+  padding: 10px 0;
+  text-align: center
+}
+
+.logo-aside-title {
+  font-size: 18px;
+  margin-bottom: -8px;
+  font-weight: bold;
+}

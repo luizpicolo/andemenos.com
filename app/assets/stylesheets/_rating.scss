@@ -1,0 +1,56 @@
+/*
+	Ratings Stars
+	(with as little code as possible)
+*/
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  height: 25px;
+  text-align: center;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  @include media($mobile) {
+    font-size: 1.2em;
+    text-align: center;
+  }
+}
+.rating > *:hover,
+.rating > *:hover ~ span,
+.rating:not(:hover) > input:checked ~ span {
+  color: transparent;
+}
+.rating > *:hover:before,
+.rating > *:hover ~ span:before,
+.rating:not(:hover) > input:checked ~ span:before {
+   content: "\2605";
+   position: absolute;
+   left: 0;
+   color: gold;
+}
+
+.rating > input {
+   margin-left:-1.1em;
+   margin-right: -2px;
+   top:3px;
+   width:1.1em;
+   height:1.1em;
+   position:relative;
+   z-index:2;
+   opacity:0;
+  cursor: pointer;
+}
+
+.rating > input.active + span:after {
+   content: "\2605";
+   position: absolute;
+   left: 0;
+   color: gold;
+}
+
+.amount-product {
+  color: #000;
+  font-size: 13px;
+}

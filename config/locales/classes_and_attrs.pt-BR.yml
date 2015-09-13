@@ -1,0 +1,55 @@
+pt-BR:
+  activerecord:
+    models:
+      user: 'Usuários'
+      city: 'Cidades'
+      company: 'Empresas'
+      country: 'País'
+      line_of_business: 'Ramos'
+      product: 'Produtos'
+      product_category: 'Categorias productos'
+      product_subcategory: 'Subcategorias produtos'
+      state: 'Estados'
+      offer: 'Ofertas'
+
+    attributes:
+      user:
+        password: 'Senha'
+        password_confirmation: 'Confirmar senha'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'
+      city:
+        name: 'Nome'
+        state: 'Estado'
+      company:
+        name: 'Nome'
+        address: 'Endereço'
+        city: 'Cidade'
+        phone: 'Telefone'
+        line_of_business: 'Ramo'
+        description: 'Descrição'
+      country:
+        name: 'Nome'
+        iso: 'Sigla'
+      line_of_business:
+        name: 'Nome'
+      product:
+        name: 'Nome'
+        product_subcategory: 'Categoria'
+        order_of_importance: 'Ordem de importância'
+        image: 'Imagem'
+      product_category:
+        name: 'Nome'
+      product_subcategory:
+        name: 'Nome'
+        product_category: 'Categoria'
+      state:
+        name: 'Nome'
+        iso: 'Sigla'
+      offer:
+        product: 'Produto'
+        company: 'Empresa'
+        regular_price: 'Preço normal'
+        offer_price: 'Preço em oferta'
+        start_date_offer: 'Data início oferta'
+        end_date_offer: 'Data final da ofertas'

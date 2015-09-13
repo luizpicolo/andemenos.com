@@ -1,0 +1,85 @@
+.nav-categories {
+ background: $color-5;
+ min-height: 2000px;
+ padding: 10px;
+ @include span-columns(3);
+ @include transition(all .2s ease-in-out);
+
+ div a {
+  color: #000;
+  font-weight: bold;
+ }
+
+ li {
+   display: block;
+
+   li {
+     margin-left: 8px;
+
+     a {
+       color: $color-6;
+     }
+
+     a:hover {
+       color: $color-3;
+     }
+   }
+ }
+
+ .nav-close {
+   background: $color-5;
+   padding: 14px 15px 17px 13px;
+   position:absolute;
+   right: -50px;
+   top: 0;
+   cursor: pointer;
+   display: none;
+
+   i {
+     font-size: 32px;
+   }
+ }
+
+ // Mobile and tablets version
+ @include media($mobile) {
+   //display: none;
+   position: absolute;
+   top: 68px;
+   width: 220px !important;
+   left: -270px;
+   z-index: 1000;
+   height: 100%;
+
+   .nav-close {
+     display: block;
+   }
+ }
+
+ @include media($tablet) {
+   //display: none;
+   position: absolute;
+   top: 68px;
+   width: 220px !important;
+   left: -270px;
+   z-index: 998;
+   height: 100%;
+
+   .nav-close {
+     display: block;
+   }
+ }
+
+ @include media($small-desktop) {
+   //display: none;
+   position: absolute;
+   top: 68px;
+   width: 220px !important;
+   left: -270px;
+   z-index: 998;
+   height: 100%;
+
+   .nav-close {
+     display: block;
+   }
+ }
+}

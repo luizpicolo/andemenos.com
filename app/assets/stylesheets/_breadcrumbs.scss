@@ -1,0 +1,23 @@
+.breadcrumbs {
+  display: block;
+  margin-left: 25.555%;
+  width: 74.4106%;
+  position: relative;
+  top: 3.5px;
+
+  // Mobile and tablets version
+  @include media($mobile) {
+    @include span-columns(12);
+    margin-left: 0;
+  }
+
+  @include media($tablet) {
+    @include span-columns(12);
+    margin-left: 0;
+  }
+
+  @include media($small-desktop) {
+    @include span-columns(12);
+    margin-left: 0;
+  }
+}

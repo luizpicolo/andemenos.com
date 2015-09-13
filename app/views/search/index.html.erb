@@ -1,0 +1,24 @@
+<div class="nav-categories">
+  <%= render 'layouts/nav_categories' %>
+</div>
+
+<div class="breadcrumbs">
+  <b>Você buscou sobre:</b> <%= params[:search]%><br />
+  <% if @sugetions.present? %>
+  <b>Você quiz dizer:</b>
+    <% @sugetions.each do |sugestion| %>
+      <%= link_to sugestion, search_path + '/?search=' + sugestion, class: 'suggestions' %>
+    <% end %>
+  <% end %>
+  <% if @msg.present? %>
+    <div class="msg-search-null">
+      <p class="search-null-title">Ops! O item procurado não pode ser encontrado.</p>
+      <p class="search-null-text">Porém, acreditamos que você possa gostar de outras promoções</p>
+    </div>
+    <div class="offers-suggestions">Ofertas sugeridas</div>
+  <% end%>
+</div>
+
+<div class="list-products">
+  <%= render 'layouts/list_products', offers: @offers %>
+</div>

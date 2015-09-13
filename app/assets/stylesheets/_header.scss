@@ -1,0 +1,212 @@
+header{
+  @include media($mobile) {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+
+  @include media($tablet) {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+
+  @include media($small-desktop) {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+}
+
+// Header Logo and Menu top
+.cont-logo-menu-top {
+  background-color: $color-1;
+  padding: 15px 15px 10px;
+}
+
+.logo {
+  @include span-columns(6);
+
+  h1 {
+    background: image_url('ande-menos.png') no-repeat;
+    background-size: 40px;
+    padding: 0 0 4px 50px;
+    font-size: 21px;
+  }
+
+  h2 {
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  // Mobile and tablets version
+  @include media($mobile) {
+    h2 {
+      display: none;
+    }
+  }
+
+  @include media($tablet) {
+    h2 {
+      display: none
+    }
+  }
+
+  @include media($small-desktop) {
+    h2 {
+      display: none
+    }
+  }
+}
+
+.cart {
+  @include span-columns(6);
+  text-align: right;
+  line-height: 2.2;
+
+  span {
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: -3px;
+  }
+
+  i {
+    font-weight: bold;
+    font-size: 35px;
+    margin-left: 3px;
+    position: relative;
+    top: 2px;
+  }
+
+  @include media($mobile) {
+    span {
+      display: none;
+    }
+  }
+
+  @include media($tablet) {
+  }
+
+  @include media($small-desktop) {
+  }
+}
+
+// Header Category and search
+.cont-category-search {
+  background: $color-2;
+  padding: 15px 15px 17px 15px;
+}
+
+.category-title {
+  @include span-columns(6);
+  position: relative;
+  font-size: 18px;
+  top: 2px;
+
+  i {
+    display: none;
+  }
+
+  // Mobile and tablets version
+  @include media($mobile) {
+    @include span-columns(1);
+    span {
+      display: none;
+    }
+
+    i {
+      display: block;
+      font-size: 32px;
+      cursor: pointer;
+    }
+  }
+
+  @include media($tablet) {
+    @include span-columns(1);
+    span {
+      display: none;
+    }
+
+    i {
+      display: block;
+      font-size: 32px;
+      cursor: pointer;
+    }
+  }
+
+  @include media($small-desktop) {
+    @include span-columns(1);
+    span {
+      display: none;
+    }
+
+    i {
+      display: block;
+      font-size: 32px;
+      cursor: pointer;
+    }
+  }
+}
+
+.search {
+  @include span-columns(6);
+  text-align: right;
+
+  input[type='text']{
+    width: 400px;
+    border-radius: 5px;
+    border: none;
+    background: #F1F1F1;
+    padding: 6px;
+    margin: 3px 10px 0 0;
+    font-size: 15px;
+  }
+
+  input[type='submit']{
+    background: image_url('lupa.jpg') no-repeat #F1F1F1;
+    content: '';
+    background-size: 30px;
+    background-position: 0 3px;
+    padding: 7px;
+    width: 30px;
+    position: relative;
+    top: -2px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  // Mobile and tablets version
+  @include media($mobile) {
+    @include span-columns(11);
+    text-align: right;
+    input[type='text']{
+      width: 90% !important;
+    }
+
+    input[type='submit']{
+      display: none;
+    }
+  }
+
+  @include media($tablet) {
+    text-align: right;
+    @include span-columns(11);
+    input[type='text']{
+      width: 90% !important;
+    }
+
+    input[type='submit']{
+      display: none;
+    }
+  }
+
+  @include media($small-desktop) {
+    @include span-columns(11);
+    text-align: right;
+    input[type='text']{
+      width: 93%;
+    }
+  }
+}

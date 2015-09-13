@@ -1,0 +1,105 @@
+@import 'application';
+@import 'alert_message';
+
+.devise-logo {
+  @include outer-container;
+  margin: 20px auto;
+  width: 500px;
+  .logo { width: 500px; }
+  text-align: center;
+
+  // Mobile and tablets version
+  @include media($mobile) {
+    @include span-columns(12);
+    width: 90%;
+    .logo { width: 100%; padding-left: 30px }
+  }
+}
+
+p.text-information {
+  @include outer-container;
+  margin: 20px auto;
+  width: 500px;
+  text-align: center;
+
+  // Mobile and tablets version
+  @include media($mobile) {
+    @include span-columns(12);
+    border: none;
+    padding: 0;
+    width: 90%;
+    margin: 0 20px;
+  }
+}
+
+h1 {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.devise {
+  @include outer-container;
+  background: $color-1;
+  margin: 20px auto;
+  padding: 20px 30px 25px;
+  width: 500px;
+  border-radius: 4px;
+
+  div.login-form {
+    @include span-columns(6);
+    padding: 0 20px 0 0;
+    border-right: 1px #ccc solid;
+    margin: 10px 0;
+
+    // Mobile and tablets version
+    @include media($mobile) {
+      @include span-columns(12);
+      border: none;
+      padding: 0;
+    }
+  }
+
+  input[type="email"], input[type="password"] {
+    width: 100%;
+    border: 1px solid $color-4;
+    border-radius: 4px;
+    padding: 10px;
+  }
+
+  input[type="submit"]{
+    margin-top: 10px;
+  }
+
+  div.login-social {
+    @include span-columns(6);
+    padding: 0 0 0 20px;
+    margin: 10px 0;
+
+    h1 { margin-bottom: 23px }
+
+    div {
+      margin-bottom: 10px;
+    }
+
+    // Mobile and tablets version
+    @include media($mobile) {
+      @include span-columns(12);
+      padding: 0;
+    }
+  }
+
+  a {
+    color: $color-6;
+  }
+
+  // Mobile and tablets version
+  @include media($mobile) {
+    @include span-columns(12);
+    width: 90%;
+    margin-left: 20px;
+  }
+}
+
+.actions {
+  margin-bottom: 5px;
+}

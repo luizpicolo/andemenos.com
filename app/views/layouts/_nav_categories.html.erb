@@ -1,0 +1,55 @@
+<% cache 'nav_categories', skip_digest: true do %>
+  <nav>
+    <div class='nav-close'>
+      <i class="fa fa-times"></i>
+    </div>
+    <ul>
+      <div>
+        <%= link_to root_path do %>
+          <i class="fa fa-angle-right"></i> Início
+        <% end %>
+      </div>
+      <% ProductCategory.all.order('name asc').each do |category| %>
+      <% amount_product_category = Offer.list_by_category(category.slug).size %>
+        <% if amount_product_category.to_i > 0 %>
+        <li>
+          <div>
+            <%= link_to list_products_by_category_path(category) do %>
+              <i class="fa fa-angle-right"></i> <%= category.name %> <span class="amount-product"> (<%= amount_product_category %>)</span>
+            <% end %>
+          </div>
+          <ul>
+            <% category.list_subcategories.each do |subcategory|%>
+            <% amount_product_subcategory = Offer.list_by_subcategory(subcategory.slug).size %>
+              <% if amount_product_subcategory.to_i > 0 %>
+              <li>
+                <%= link_to subcategory.name, list_products_by_subcategory_path(category, subcategory) %> <span class="amount-product">(<%= amount_product_subcategory %>)</span>
+              </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </nav>
+
+  <div class="logo-aside-title">Empresas em destaque</div>
+  <hr />
+  <% Company.where(status: true, hightlight: true).order('name asc').each do |company| %>
+    <div class="logo-aside">
+      <%= link_to company_path(company.line_of_business.slug, company.slug) do %>
+        <%= image_tag company.logo.sd_150 %>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="logo-aside-title">Empresas</div>
+  <hr />
+  <% Company.where(status: true, hightlight: false).order('name asc').each do |company| %>
+    <div class="logo-aside">
+      <%= link_to company_path(company.line_of_business.slug, company.slug) do %>
+        <%= image_tag company.logo.sd_150, width: 100 %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

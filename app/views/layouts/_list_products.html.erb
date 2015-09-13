@@ -1,0 +1,37 @@
+<% offer_verification = Offer.new %>
+<% offers.each do |offer| %>
+  <% if offer_verification.product_id != offer.product_id %>
+  <% offer_verification = offer %>
+  <section class="product">
+    <!-- logo company -->
+    <div class="text-comp">
+      <div class="text-left"></div>
+      <div class="text-right"></div>
+    </div>
+
+    <!-- Image product -->
+    <div class="image-product">
+      <%= link_to list_products_by_name_path(offer.category, offer.subcategory, offer.product.slug), title: 'Clique aqui para ver a lista de preços para este produto' do %>
+        <%= image_tag offer.product.image.thumb %>
+      <% end %>
+    </div>
+
+    <!-- Name product -->
+    <h1 class="text-center">
+      <%= offer.product.name %>
+    </h1>
+
+    <!-- Price -->
+    <div class="price text-center">
+      <p>A partir de</p>
+      <p><%= number_to_currency offer.min_price %><span>cada</span></p>
+    </div>
+
+    <div class="social text-center">
+      <%= link_to list_products_by_name_path(offer.category, offer.subcategory, offer.product.slug), title: 'Clique aqui para ver a lista de preços para este produto' do %>
+      Em <b><%= offer.companies %></b> supermercado<%= offer.companies == 1 ? '' : 's' %>
+      <% end %>
+    </div>
+  </section>
+<% end %>
+<% end %>

@@ -1,0 +1,29 @@
+<div class="nav-categories">
+  <%= render 'layouts/nav_categories' %>
+</div>
+
+<div class="company-info">
+  <%= image_tag @company.logo.sd_150, width: 150 %><br />
+  <div><%= @company.address %></div> <div><b>Fone:</b> <%= @company.phone %></div>
+</div>
+
+<div class="list-products">
+  <div class="container-product">
+    <% if @offers.present? %>
+      <%= render 'layouts/list_products_companies', offers: @offers %>
+    <% else %>
+      <div class="pagination">
+        Que pena, esta empresa ainda não possui ofertas cadastradas.<br />
+        Porém, você ainda pode buscar outras oferta. <a href="/">Clique aqui</a>
+      </div>
+    <% end %>
+  </div>
+  <div class="gambi"></div>
+  <% if @offers.present? %>
+  <div class="pagination">
+    <div>
+    <%= link_to_next_page(@offers, 'Veja mais ofertas', :remote => true) %>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,34 @@
+<% offers.each do |offer| %>
+  <section class="product">
+    <!-- logo company -->
+    <div class="logo-comp">
+      <div class="text-left">
+        <%= image_tag offer.company.logo.thumb, height: 30 %>
+      </div>
+      <div class="text-right"></div>
+    </div>
+
+    <!-- Image product -->
+    <div class="image-product text-center">
+      <%= image_tag offer.product.image.thumb, height: 120 %>
+    </div>
+
+    <!-- Name product -->
+    <h1 class="text-center">
+      <%= offer.product.name %>
+    </h1>
+
+    <!-- Price -->
+    <div class="price text-center">
+      <p><%= 'de ' << number_to_currency(offer.regular_price).to_s if offer.regular_price.present? %></p>
+      <p><%= number_to_currency offer.offer_price %><span>cada</span></p>
+    </div>
+
+    <div class="social text-center">
+      <%= link_to '#' do %>
+        <i class="fa fa-facebook-square"></i> Compartilhar
+      <% end %>
+      <div>Ofertas válidas de <%= offer.start_date %> à  <%= offer.end_date %> de <%= offer.month %><br /> ou enquanto durar os estoques</div>
+    </div>
+  </section>
+<% end %>

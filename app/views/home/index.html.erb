@@ -1,0 +1,19 @@
+<div class="nav-categories">
+  <%= render 'layouts/nav_categories' %>
+</div>
+
+<div class="breadcrumbs">
+  <%= render_breadcrumbs :separator => ' / ' %>
+</div>
+
+<div class="list-products">
+  <div class="container-product">
+    <%= render 'layouts/list_products', offers: @offers %>
+  </div>
+  <div class="gambi"></div>
+  <div class="pagination">
+    <div>
+    <%= link_to_next_page(@offers, 'Veja mais ofertas', :remote => true) %>
+    </div>
+  </div>
+</div>

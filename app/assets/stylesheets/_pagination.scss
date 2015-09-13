@@ -1,0 +1,14 @@
+.pagination  {
+  clear: both;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  background: $color-5;
+  position: relative;
+  top: 10px;
+  bottom: 10px;
+
+  a {
+    display: block;
+  }
+}

@@ -1,0 +1,12 @@
+common: &default_settings
+  license_key: 53f75d98ca33c60c98c575b848ad45c037eee7e0
+  app_name: andemenos.com
+  log_level: info
+
+staging:
+  <<: *default_settings
+  app_name: andemenos.com (Staging)
+
+production:
+  <<: *default_settings
+  app_name: andemenos.com (Production)

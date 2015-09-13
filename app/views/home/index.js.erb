@@ -1,0 +1,7 @@
+$("<%=j render 'layouts/list_products', offers: @offers %>").appendTo($(".list-products .container-product"));
+
+<% if @offers.last_page? %>
+  $('.pagination').html("Não há mais ofertas a serem listadas");
+<% else %>
+  $('.pagination').html("<%=j link_to_next_page(@offers, 'Veja mais ofertas', :remote => true) %>");
+<% end %>

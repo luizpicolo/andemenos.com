@@ -1,0 +1,11 @@
+<div class="nav-categories">
+  <%= render 'layouts/nav_categories' %>
+</div>
+
+<div class="breadcrumbs">
+  <%= render_breadcrumbs :separator => ' / ' %>
+</div>
+
+<div class="list-products">
+  <%= render 'layouts/list_products_name', offers: @offers %>
+</div>
