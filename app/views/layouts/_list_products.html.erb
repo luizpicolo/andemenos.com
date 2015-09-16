@@ -1,9 +1,9 @@
 <% offer_verification = Offer.new %>
 <% offers.each do |offer| %>
   <% if offer_verification.product_id != offer.product_id %>
-    <% offer_verification = offer %>
-    <%= link_to list_products_by_name_path(offer.category, offer.subcategory, offer.product.slug), title: 'Clique aqui para ver a lista de preços para este produto' do %>
-      <section class="product">
+  <% offer_verification = offer %>
+    <section class="product">
+      <%= link_to list_products_by_name_path(offer.category, offer.subcategory, offer.product.slug), title: 'Clique aqui para ver a lista de preços para este produto' do %>
         <!-- logo company -->
         <div class="text-comp">
           <div class="text-left"></div>
@@ -29,7 +29,7 @@
         <div class="social text-center">
           Em <b><%= offer.companies %></b> supermercado<%= offer.companies == 1 ? '' : 's' %>
         </div>
-      </section>
-    <% end %>
+      <% end %>
+    </section>
   <% end %>
 <% end %>
