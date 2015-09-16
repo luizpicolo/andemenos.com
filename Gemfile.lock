@@ -168,6 +168,7 @@ GEM
     haml (4.0.7)
       tilt
     hashie (3.4.2)
+    htmlcompressor (0.2.0)
     i18n (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
@@ -379,6 +380,7 @@ DEPENDENCIES
   faker
   figaro
   friendly_id
+  htmlcompressor (~> 0.2.0)
   jbuilder (~> 2.0)
   jquery-infinite-pages!
   jquery-rails
