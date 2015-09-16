@@ -1,6 +1,6 @@
 Rails.env.on(:any) do
   options = {
-    :enabled => true,
+    :enabled => false,
     :remove_multi_spaces => true,
     :remove_comments => true,
     :remove_intertag_spaces => false,

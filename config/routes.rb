@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "/404" => "errors#not_found"
+  get "/500" => "errors#internal_server_error"
+
   # Devise Routes
   devise_for :user, path: 'auth', path_names: {
       sign_in: 'login',
