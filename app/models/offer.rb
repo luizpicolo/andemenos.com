@@ -80,7 +80,7 @@ class Offer < ActiveRecord::Base
                  inner join products as p on (p.id = o.product_id)
                  inner join product_subcategories as ps on (ps.id = p.product_subcategory_id)
                  inner join product_categories as pc on (pc.id = ps.product_category_id)
-                 where o.end_date_offer >= ?', Time.zone.now.strftime("%Y-%m-%d").to_date])
+                 where o.end_date_offer >= ? order by o.start_date_offer desc', Time.zone.now.strftime("%Y-%m-%d").to_date])
   end
 
   def self.list_by_category(category)
