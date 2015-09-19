@@ -76,11 +76,11 @@ class Offer < ActiveRecord::Base
 
   # Return array of offers
   def self.random_list
-    find_by_sql(['select DISTINCT ON (product_id) *, o.id as id from offers as o
+    find_by_sql(['select DISTINCT ON (product_id) *, o.id as id, o.start_date_offer as date_offer from offers as o
                  inner join products as p on (p.id = o.product_id)
                  inner join product_subcategories as ps on (ps.id = p.product_subcategory_id)
                  inner join product_categories as pc on (pc.id = ps.product_category_id)
-                 where o.end_date_offer >= ?', Time.zone.now.strftime("%Y-%m-%d").to_date])
+                 where o.end_date_offer >= ? order by product_id desc', Time.zone.now.strftime("%Y-%m-%d").to_date])
   end
 
   def self.list_by_category(category)
@@ -88,7 +88,7 @@ class Offer < ActiveRecord::Base
                  inner join products as p on (p.id = o.product_id)
                  inner join product_subcategories as ps on (ps.id = p.product_subcategory_id)
                  inner join product_categories as pc on (pc.id = ps.product_category_id)
-                 where o.end_date_offer >= ? and pc.slug = ?', Time.zone.now.strftime("%Y-%m-%d").to_date, category])
+                 where o.end_date_offer >= ? and pc.slug = ? order by product_id desc', Time.zone.now.strftime("%Y-%m-%d").to_date, category])
   end
 
   def self.list_by_subcategory(subcategory)
@@ -96,7 +96,7 @@ class Offer < ActiveRecord::Base
                  inner join products as p on (p.id = o.product_id)
                  inner join product_subcategories as ps on (ps.id = p.product_subcategory_id)
                  inner join product_categories as pc on (pc.id = ps.product_category_id)
-                 where o.end_date_offer >= ? and ps.slug = ?', Time.zone.now.strftime("%Y-%m-%d").to_date, subcategory])
+                 where o.end_date_offer >= ? and ps.slug = ? order by product_id desc', Time.zone.now.strftime("%Y-%m-%d").to_date, subcategory])
   end
 
   def self.list_by_company(company)
