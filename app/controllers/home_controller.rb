@@ -4,8 +4,8 @@ class HomeController < ApplicationController
   include AnalyticHelper
 
   def index
-    session[:offers] = Offer.random_list if session[:offers].nil?
-    @offers ||= Kaminari.paginate_array(session[:offers]).page(params[:page])
+    # session[:offers] = Offer.random_list if session[:offers].nil?
+    @offers ||= Kaminari.paginate_array(Offer.random_list).page(params[:page])
 
     # Save data analytics
     analytics(@offers, 'home')
