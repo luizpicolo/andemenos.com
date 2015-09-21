@@ -19,6 +19,12 @@ class AnalyticsController < ApplicationController
                              .group(:"products.name")
                              .select(:product_id)
                              .order("count_product_id desc").count
+
+   @pages = Analytic.joins(:company)
+                    .where("local != ?", "product").where("local != ?", "subcategory").where("local != ?", "category")
+                    .group(:"companies.name")
+                    .select(:company_id)
+                    .order("count_company_id desc").count
     render layout: false
   end
 end

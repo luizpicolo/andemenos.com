@@ -67,5 +67,21 @@
       <% end %>
       </table>
     </section>
+
+    <section>
+      <h3>Paginas empresas</h3>
+      <table>
+       <tr>
+         <td>Empresa</td>
+         <td>Acessos</td>
+       </tr>
+       <% @pages.each do |teste| %>
+       <tr>
+         <td><%= teste[0] %></td>
+         <td><%= teste[1] %></td>
+       </tr>
+      <% end %>
+      </table>
+    </section>
   </body>
 </html>
