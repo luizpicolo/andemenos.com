@@ -13,6 +13,12 @@ class AnalyticsController < ApplicationController
                                  .group(:"product_subcategories.name")
                                  .select(:product_subcategory_id)
                                  .order("count_product_subcategory_id desc").count
+
+   @access_product = Analytic.joins(:product)
+                             .where("local = ?", "product")
+                             .group(:"products.name")
+                             .select(:product_id)
+                             .order("count_product_id desc").count
     render layout: false
   end
 end

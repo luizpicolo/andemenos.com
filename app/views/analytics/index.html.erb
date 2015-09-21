@@ -51,5 +51,21 @@
       <% end %>
       </table>
     </section>
+
+    <section>
+      <h3>Produtos mais acessadas</h3>
+      <table>
+       <tr>
+         <td>Produto</td>
+         <td>Acessos</td>
+       </tr>
+       <% @access_product.each do |teste| %>
+       <tr>
+         <td><%= teste[0] %></td>
+         <td><%= teste[1] %></td>
+       </tr>
+      <% end %>
+      </table>
+    </section>
   </body>
 </html>
