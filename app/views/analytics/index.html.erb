@@ -8,8 +8,32 @@
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <title>Andemenos.com - Analytics</title>
+    <style media="screen">
+      body {
+        font-family: sans-serif;
+      }
+
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
   </head>
   <body>
     <h1>Seja bem vindo(a) ao análise estatística de suas ofertas.</h1>
+    <div>
+      <h3>Categorias mais acessadas</h3>
+      <table>
+       <tr>
+         <td>Categoria</td>
+         <td>Acessos</td>
+       </tr>
+       <% @access_category.each do |teste| %>
+       <tr>
+         <td><%= teste[0] %></td>
+         <td><%= teste[1] %></td>
+       </tr>
+      <% end %>
+      </table>
+    </div>
   </body>
 </html>
