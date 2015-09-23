@@ -23,7 +23,7 @@
     <!-- Price -->
     <div class="price text-center">
       <p><%= 'de ' << number_to_currency(offer.regular_price).to_s if offer.regular_price.present? %></p>
-      <p><%= number_to_currency offer.offer_price %><span>cada</span></p>
+      <p><%= number_to_currency offer.offer_price %></p>
     </div>
 
     <div class="social text-center">
