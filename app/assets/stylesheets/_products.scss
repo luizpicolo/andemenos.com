@@ -62,6 +62,9 @@
     border-bottom: 3px solid $color-4;
     padding-left: 10px;
     height: 45px;
+    margin: 0px 10px;
+    font-size: 12px;
+    text-align: center;
 
     div {
       @include span-columns(6);
