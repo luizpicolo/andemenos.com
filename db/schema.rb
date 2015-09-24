@@ -161,16 +161,6 @@ ActiveRecord::Schema.define(version: 20150921053649) do
 
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type", using: :btree
 
-  create_table "ratings", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "star"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "ip"
-  end
-
-  add_index "ratings", ["product_id"], name: "index_ratings_on_product_id", using: :btree
-
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id", null: false
     t.text     "data"
@@ -228,6 +218,5 @@ ActiveRecord::Schema.define(version: 20150921053649) do
   add_foreign_key "offers", "products"
   add_foreign_key "product_subcategories", "product_categories"
   add_foreign_key "products", "product_subcategories"
-  add_foreign_key "ratings", "products"
   add_foreign_key "states", "countries"
 end
