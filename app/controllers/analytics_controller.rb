@@ -12,13 +12,13 @@ class AnalyticsController < ApplicationController
                                  .where("local = ?", "subcategory")
                                  .group(:"product_subcategories.name")
                                  .select(:product_subcategory_id)
-                                 .order("count_product_subcategory_id desc").count
+                                 .order("count_product_subcategory_id desc").limit(10).count
 
    @access_product = Analytic.joins(:product)
                              .where("local = ?", "product")
                              .group(:"products.name")
                              .select(:product_id)
-                             .order("count_product_id desc").count
+                             .order("count_product_id desc").limit(10).count
 
    @pages = Analytic.joins(:company)
                     .where("local != ?", "home").where("local != ?", "product").where("local != ?", "subcategory").where("local != ?", "category")

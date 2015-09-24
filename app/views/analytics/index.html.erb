@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag 'analytics', media: 'all', 'data-turbolinks-track' => true %>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <%= javascript_include_tag "//code.highcharts.com/highcharts.js", "chartkick" %>
+    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
     <title>Andemenos.com - Analytics</title>
     <style media="screen">
       body {
@@ -22,68 +22,8 @@
   <body>
     <h1>Seja bem vindo(a) ao análise estatística de suas ofertas.</h1>
     <%= pie_chart @access_category %>
-    <section>
-      <h3>Categorias mais acessadas</h3>
-      <table>
-       <tr>
-         <td>Categoria</td>
-         <td>Acessos</td>
-       </tr>
-       <% @access_category.each do |teste| %>
-       <tr>
-         <td><%= teste[0] %></td>
-         <td><%= teste[1] %></td>
-       </tr>
-      <% end %>
-      </table>
-    </section>
-
-    <section>
-      <h3>Subcategorias mais acessadas</h3>
-      <table>
-       <tr>
-         <td>Subcategoria</td>
-         <td>Acessos</td>
-       </tr>
-       <% @access_subcategory.each do |teste| %>
-       <tr>
-         <td><%= teste[0] %></td>
-         <td><%= teste[1] %></td>
-       </tr>
-      <% end %>
-      </table>
-    </section>
-
-    <section>
-      <h3>Produtos mais acessadas</h3>
-      <table>
-       <tr>
-         <td>Produto</td>
-         <td>Acessos</td>
-       </tr>
-       <% @access_product.each do |teste| %>
-       <tr>
-         <td><%= teste[0] %></td>
-         <td><%= teste[1] %></td>
-       </tr>
-      <% end %>
-      </table>
-    </section>
-
-    <section>
-      <h3>Paginas empresas</h3>
-      <table>
-       <tr>
-         <td>Empresa</td>
-         <td>Acessos</td>
-       </tr>
-       <% @pages.each do |teste| %>
-       <tr>
-         <td><%= teste[0] %></td>
-         <td><%= teste[1] %></td>
-       </tr>
-      <% end %>
-      </table>
-    </section>
+    <%= pie_chart @access_subcategory %>
+    <%= pie_chart @access_product %>
+    <%= pie_chart @pages %>
   </body>
 </html>
