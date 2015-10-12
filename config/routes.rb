@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   authenticate :user, lambda { |u| u.admin? } do
     get '/analytics' => 'analytics#index', as: :analytics
+    get '/analytics/show' => 'analytics#show'
   end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

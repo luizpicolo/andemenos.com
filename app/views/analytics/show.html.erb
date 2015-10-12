@@ -21,16 +21,21 @@
       div {
 
         height: 300px;
-
+        
         text-align: center;
       }
     </style>
   </head>
   <body>
-    <form action="analytics/show" method="get">
+    <form method="get">
       <input type="text" name="dateinit" placeholder="data inicial" value="<%= params[:dateinit]%>">
       <input type="text" name="datefini" placeholder="data final" value="<%= params[:datefini]%>">
       <input type="submit" value="Filtrar">
     </form>
+    <h1>Seja bem vindo(a) ao análise estatística de suas ofertas.</h1>
+    <div><%= pie_chart @access_category %></div>
+    <div><%= pie_chart @access_subcategory %></div>
+    <div><%= pie_chart @access_product %></div>
+    <div><%= pie_chart @pages %></div>
   </body>
 </html>

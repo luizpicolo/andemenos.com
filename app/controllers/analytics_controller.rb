@@ -2,6 +2,10 @@ class AnalyticsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    render layout: false
+  end
+
+  def show
     @access_category = Analytic.joins(:product_category)
                                .where(:created_at => (params[:dateinit].to_date)..(params[:datefini].to_date))
                                .where("local = ?", "category")
