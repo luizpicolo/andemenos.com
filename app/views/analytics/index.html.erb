@@ -17,13 +17,25 @@
       table, th, td {
         border: 1px solid black;
       }
+
+      div {
+
+        height: 300px;
+        
+        text-align: center;
+      }
     </style>
   </head>
   <body>
+    <form method="get">
+      <input type="text" name="dateinit" placeholder="data inicial" value="<%= params[:dateinit]%>">
+      <input type="text" name="datefini" placeholder="data final" value="<%= params[:datefini]%>">
+      <input type="submit" value="Filtrar">
+    </form>
     <h1>Seja bem vindo(a) ao análise estatística de suas ofertas.</h1>
-    <%= pie_chart @access_category %>
-    <%= pie_chart @access_subcategory %>
-    <%= pie_chart @access_product %>
-    <%= pie_chart @pages %>
+    <div><%= pie_chart @access_category %></div>
+    <div><%= pie_chart @access_subcategory %></div>
+    <div><%= pie_chart @access_product %></div>
+    <div><%= pie_chart @pages %></div>
   </body>
 </html>
