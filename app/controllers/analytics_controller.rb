@@ -34,6 +34,14 @@ class AnalyticsController < ApplicationController
                     .select(:company_id)
                     .order("count_company_id desc").count
 
+    @access_category_days = Analytic.joins(:product_category)
+                            .where(:created_at => (params[:dateinit].to_date)..(params[:datefini].to_date))
+                            .where("local = ?", "category")
+                            .group_by_day(:'analytics.created_at')
+                            .select(:product_category_id)
+                            .order("count_product_category_id desc").count
+
+
     render layout: false
   end
 end
