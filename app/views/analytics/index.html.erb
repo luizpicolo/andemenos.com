@@ -7,30 +7,29 @@
     <%= stylesheet_link_tag 'analytics', media: 'all', 'data-turbolinks-track' => true %>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <title>Andemenos.com - Analytics</title>
     <style media="screen">
       body {
         font-family: sans-serif;
       }
-
-      table, th, td {
-        border: 1px solid black;
-      }
-
-      div {
-
-        height: 300px;
-
-        text-align: center;
-      }
     </style>
   </head>
   <body>
-    <form action="analytics/show" method="get">
-      <input type="text" name="dateinit" placeholder="data inicial" value="<%= params[:dateinit]%>">
-      <input type="text" name="datefini" placeholder="data final" value="<%= params[:datefini]%>">
-      <input type="submit" value="Filtrar">
-    </form>
+    <h1 class="text-center">Seja bem vindo(a) a análise estatística de suas ofertas.</h1>
+    <br />
+    <form class="form-inline text-center">
+      <div class="form-group">
+        <label class="sr-only" for="exampleInputEmail3">Email address</label>
+        <input type="text" name="dateinit" class="form-control" id="exampleInputEmail3" placeholder="2015-10-10">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="exampleInputPassword3">Password</label>
+        <input type="text" name="datefini" class="form-control" id="exampleInputPassword3" placeholder="2015-10-20">
+      </div>
+      <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form><br />
   </body>
 </html>
