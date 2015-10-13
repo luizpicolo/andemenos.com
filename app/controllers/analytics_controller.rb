@@ -42,6 +42,7 @@ class AnalyticsController < ApplicationController
 
     @teste = Analytic
              .where(:created_at => (params[:dateinit].to_date)..(params[:datefini].to_date))
+             .where("local = ?", "home")  
              .group_by_day(:created_at).count
 
     render layout: false
