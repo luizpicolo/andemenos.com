@@ -31,10 +31,28 @@
       </div>
       <button type="submit" class="btn btn-primary">Filtrar</button>
     </form><br />
-    <div class="col-md-6"><%= pie_chart @access_category %></div>
-    <div class="col-md-6"><%= pie_chart @access_subcategory %></div>
-    <div class="col-md-6"><%= pie_chart @access_product %></div>
-    <div class="col-md-6"><%= pie_chart @pages %></div>
-    <div class="col-md-6"><%= pie_chart @prod_company %></div>
+    <div class="col-md-6">
+      <div class="text-center">Quantidade de acessos por categoria</div>
+      <%= pie_chart @access_category %>
+    </div>
+    <div class="col-md-6">
+      <div class="text-center">Quantidade de acessos por subcategoria</div>
+      <%= pie_chart @access_subcategory %>
+    </div>
+    <div class="col-md-6">
+      <div class="text-center">Quantidade de acessos diretos por produto</div>
+      <%= pie_chart @access_product %>
+    </div>
+    <div class="col-md-6">
+      <div class="text-center">Quantidade de acessos por páginas</div>
+      <%= pie_chart @pages %>
+    </div>
+    <div class="col-md-6">
+      <div class="text-center">Quantidade de ofertas cadastradas</div>
+      <%= pie_chart @prod_company %>
+    </div>
+    <div class="col-md-6">
+      <%= line_chart @teste %>
+    </div>
   </body>
 </html>

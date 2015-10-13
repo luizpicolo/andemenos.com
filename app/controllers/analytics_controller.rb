@@ -34,12 +34,13 @@ class AnalyticsController < ApplicationController
                     .select(:company_id)
                     .order("count_company_id desc").count
 
-  @prod_company = Offer.joins(:company)
+    @prod_company = Offer.joins(:company)
                   .where(:start_date_offer => (params[:dateinit].to_date)..(params[:datefini].to_date))
                   .group(:'companies.name')
                   .select(:'companies.name')
                   .order("count_companies_name desc").count
 
+    @teste = Analytic.group_by_day(:created_at).count
 
     render layout: false
   end
