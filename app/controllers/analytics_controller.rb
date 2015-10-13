@@ -40,7 +40,9 @@ class AnalyticsController < ApplicationController
                   .select(:'companies.name')
                   .order("count_companies_name desc").count
 
-    @teste = Analytic.group_by_day(:created_at).count
+    @teste = Analytic
+             .where(:created_at => (params[:dateinit].to_date)..(params[:datefini].to_date))
+             .group_by_day(:created_at).count
 
     render layout: false
   end
